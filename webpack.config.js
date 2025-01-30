@@ -17,12 +17,18 @@ module.exports = {
     port: 8080,
     open: true,
     hot: true,
+    watchFiles: ["src/**/*.html"],
+    liveReload: true,
   },
   module: {
     rules: [
       {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.html$/,
+        loader: "html-loader", // Добавляем загрузчик для HTML
       },
     ],
   },
